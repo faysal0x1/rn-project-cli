@@ -1,0 +1,41 @@
+{
+  "name": "rn-project-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for creating React Native/Expo projects with optional NativeWind/TailwindCSS setup - WebStorm compatible",
+  "main": "index.js",
+  "bin": {
+    "rn-create": "./bin/rn-create.js",
+    "rn-create-project": "./bin/rn-create.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "install-global": "npm install -g ."
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "cli",
+    "webstorm",
+    "project-generator",
+    "nativewind",
+    "tailwindcss",
+    "expo-cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^9.2.12"
+  }
+}

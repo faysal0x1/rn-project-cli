@@ -1,0 +1,50 @@
+========================================
+React Native Project CLI - Quick Start
+========================================
+
+ONE-CLICK INSTALLATION:
+-----------------------
+1. Double-click: install.bat
+2. Done!
+
+
+USAGE:
+------
+Command Line:
+  rn-create my-app
+  rn-create my-app --no-install
+  rn-create my-app --template tabs
+
+Batch File:
+  rn-create.bat my-app
+  rn-create.bat my-app --no-install
+
+
+WEBSTORM SETUP (30 seconds):
+----------------------------
+1. File → Settings → Tools → External Tools
+2. Click + (Add)
+3. Fill in:
+   Name: Create React Native Project
+   Program: C:\Users\faysa\rn-project-cli\rn-create.bat
+   Arguments: $Prompt$
+   Working directory: $ProjectFileDir$
+4. Click OK
+
+USAGE IN WEBSTORM:
+------------------
+Right-click in Project Explorer
+→ External Tools
+→ Create React Native Project
+→ Enter: uber_clone (or uber_clone --no-install)
+
+
+FIXED ISSUES:
+-------------
+✓ Changed --skip-install to --no-install (correct flag)
+✓ Fixed command syntax
+✓ Added WebStorm integration
+✓ One-click installer included
+
+
+For detailed instructions, see README.md or webstorm-setup.md
