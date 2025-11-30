@@ -24,6 +24,50 @@ npm install -g .
 1. **Double-click `install.bat`** - This will install the CLI globally
 2. Or run manually: `npm install -g .`
 
+## Updating the Package
+
+To update to the latest version of `rn-project-cli`:
+
+### Update to Latest Version
+
+```bash
+npm install -g rn-project-cli@latest
+```
+
+Or simply:
+
+```bash
+npm update -g rn-project-cli
+```
+
+### Check Current Version
+
+```bash
+npm list -g rn-project-cli
+```
+
+Or check the version from the CLI:
+
+```bash
+rn-create --version
+```
+
+### Update to Specific Version
+
+```bash
+npm install -g rn-project-cli@1.0.2
+```
+
+### Verify Update
+
+After updating, verify the installation:
+
+```bash
+rn-create
+```
+
+You should see the help message with the latest features.
+
 ## Usage
 
 ### Basic Usage

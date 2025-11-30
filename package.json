@@ -1,6 +1,6 @@
 {
   "name": "rn-project-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI tool for creating React Native/Expo projects with optional NativeWind/TailwindCSS setup - WebStorm compatible",
   "main": "index.js",
   "bin": {

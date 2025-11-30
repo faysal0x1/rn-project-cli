@@ -7,11 +7,23 @@ const chalk = require('chalk');
 const inquirer = require('inquirer');
 const setupNativeWindConfig = require('./nativewind');
 
+// Get package version
+const packageJsonPath = path.join(__dirname, '..', 'package.json');
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+const version = packageJson.version;
+
 // Get command line arguments
 const args = process.argv.slice(2);
 
+// Handle version flag (must be checked first, before any other processing)
+if (args.includes('--version') || args.includes('-v') || args[0] === '--version' || args[0] === '-v') {
+  console.log(version);
+  process.exit(0);
+}
+
 if (args.length === 0) {
   console.log(chalk.blue('React Native Project Creator'));
+  console.log(chalk.gray(`Version: ${version}`));
   console.log(chalk.gray('Usage: rn-create <project-name> [options]'));
   console.log('');
   console.log('Options:');
@@ -20,20 +32,27 @@ if (args.length === 0) {
   console.log('  --template      Specify template (blank, tabs, etc.)');
   console.log('  --nativewind    Automatically setup NativeWind/TailwindCSS');
   console.log('  --no-nativewind Skip NativeWind setup (default)');
+  console.log('  --version, -v   Show version number');
   console.log('');
   console.log('Examples:');
   console.log('  rn-create my-app');
   console.log('  rn-create my-app --no-install');
   console.log('  rn-create my-app --template tabs');
   console.log('  rn-create my-app --nativewind');
+  console.log('  rn-create --version');
   process.exit(0);
 }
 
 const projectName = args[0];
 const options = args.slice(1);
 
-// Validate project name
+// Validate project name (skip if first arg is a flag)
 if (!projectName || projectName.startsWith('-')) {
+  // If it's a version flag, it should have been caught above, but double-check
+  if (projectName === '--version' || projectName === '-v') {
+    console.log(version);
+    process.exit(0);
+  }
   console.error(chalk.red('Error: Project name is required'));
   process.exit(1);
 }
