@@ -4,8 +4,8 @@
   "description": "CLI tool for creating React Native/Expo projects with optional NativeWind/TailwindCSS setup - WebStorm compatible",
   "main": "index.js",
   "bin": {
-    "rn-create": "./bin/rn-create.js",
-    "rn-create-project": "./bin/rn-create.js"
+    "rn-create": "bin/rn-create.js",
+    "rn-create-project": "bin/rn-create.js"
   },
   "files": [
     "bin",
