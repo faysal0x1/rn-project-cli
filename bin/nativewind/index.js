@@ -8,6 +8,7 @@ const createGlobalCss = require('./create-global-css');
 const updateBabelConfig = require('./update-babel-config');
 const updateEntryFile = require('./update-entry-file');
 const updateMetroConfig = require('./update-metro-config');
+const updateTsConfig = require('./update-tsconfig');
 
 /**
  * Sets up NativeWind and TailwindCSS for a React Native/Expo project
@@ -40,6 +41,11 @@ function setupNativeWindConfig(projectPath, skipInstall) {
 
     // Update metro.config.js
     updateMetroConfig(projectPath);
+
+    // Update tsconfig.json (if TypeScript project)
+    if (isTypeScript) {
+      updateTsConfig(projectPath);
+    }
 
     console.log('');
     console.log(chalk.green('✓ NativeWind/TailwindCSS setup complete!'));

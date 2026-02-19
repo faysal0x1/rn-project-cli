@@ -8,8 +8,8 @@ const chalk = require('chalk');
  */
 function installPackages(projectPath, skipInstall) {
     if (!skipInstall) {
-        console.log(chalk.gray('Installing NativeWind and TailwindCSS...'));
-        execSync('npm install nativewind tailwindcss', {
+        console.log(chalk.gray('Installing NativeWind v4, TailwindCSS, and Reanimated...'));
+        execSync('npm install nativewind@^4.0.1 tailwindcss@^3.3.2 react-native-reanimated', {
             stdio: 'inherit',
             cwd: projectPath,
             shell: true
